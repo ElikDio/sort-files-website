@@ -1,24 +1,29 @@
-import {dirname} from 'path';
-import {fileURLToPath} from 'url';
-import {FlatCompat} from '@eslint/eslintrc';
-import noInlineStyles from 'eslint-plugin-no-inline-styles';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+export default [
   {
-    plugins: {noInlineStyles},
+    extends: [
+      'eslint:recommended',
+      'plugin:react/recommended',
+      'plugin:@typescript-eslint/recommended',
+      'prettier',
+    ],
+    plugins: ['@typescript-eslint', 'react', 'no-inline-styles'],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
     rules: {
-      "@typescript-eslint/no-explicit-any": "warn",
-      'noInlineStyles/no-inline-styles': 1,
-      // note you must disable the base rule as it can report incorrect errors
-      'no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      'no-inline-styles/no-inline-styles': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {
@@ -28,7 +33,10 @@ const eslintConfig = [
         },
       ],
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
 ];
-
-export default eslintConfig;

@@ -1,0 +1,13 @@
+@use './variables.scss' as variables;
+@use './nullstyle.scss';
+
+body {
+    margin: 0;
+    background-color: variables.$colorBlack;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}

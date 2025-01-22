@@ -1,0 +1,49 @@
+@use '../../styles/variables.scss' as variables;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 60px;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(variables.$colorBlackAccent, 0.6);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  gap: 80px;
+  margin-right: 50px;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: variables.$colorWhite;
+  font-size: 24px;
+  position: relative;
+  vertical-align: middle;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background-color: variables.$colorWhite;
+    left: 0;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
