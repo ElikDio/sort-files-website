@@ -4,7 +4,7 @@ import { Button } from '../ui/button/Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="hero">
       <div className={styles.texts}>
         <h1>Sort Files</h1>
         <h3>Приложение, которое организует ваши файлы за несколько кликов.</h3>

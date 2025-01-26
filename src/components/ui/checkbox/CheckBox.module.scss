@@ -1,0 +1,31 @@
+@use '../../../styles/variables.scss' as variables;
+
+.checkBox {
+  padding: 8px 0;
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+  input[type='checkbox'] {
+    appearance: none;
+    flex: 0 0 20px;
+    height: 20px;
+    border: 1px solid variables.$colorGray;
+    border-radius: 2px;
+    margin-top: 4px;
+    cursor: pointer;
+    &:checked {
+      //   background: variables.$colorPurple url('/icons/checkmark-white.svg')
+      //     center center no-repeat;
+      background-color: variables.$colorPurple;
+      border: 1px solid variables.$colorPurple;
+    }
+    &:hover {
+      border: 1px solid variables.$colorPurple;
+    }
+  }
+  span {
+    color: variables.$colorBlack;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

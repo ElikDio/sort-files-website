@@ -13,8 +13,24 @@
   }
 }
 
+.faqBody {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
 .questions {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 16px;
+}
+
+.contactUs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+  font-size: 30px;
+  color: variables.$colorWhite;
 }
