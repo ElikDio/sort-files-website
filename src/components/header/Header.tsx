@@ -11,16 +11,16 @@ export const Header: React.FC = () => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <a href="#one">О нас</a>
+              <a href="#about">О нас</a>
             </li>
             <li>
-              <a href="#two">Инструкция</a>
+              <a href="#instructions">Инструкция</a>
             </li>
             <li>
-              <a href="#three">Вопрос-ответ</a>
+              <a href="#faq">Вопрос-ответ</a>
             </li>
             <li>
-              <a href="#four">Предложения</a>
+              <a href="#feedback-form">Предложения</a>
             </li>
           </ul>
         </nav>

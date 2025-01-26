@@ -1,0 +1,50 @@
+@use '../../styles/variables.scss' as variables;
+
+.about {
+  margin-top: 100px;
+  color: variables.$colorWhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 60px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.purpose {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  gap: 20px;
+}
+
+.demo {
+  width: 500px;
+  //   height: 620px;
+  cursor: pointer;
+
+  img {
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.04);
+    }
+  }
+}

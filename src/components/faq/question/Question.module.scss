@@ -1,0 +1,39 @@
+@use '../../../styles/variables.scss' as variables;
+
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 30px;
+  background-color: variables.$colorWhite;
+  border-radius: 10px;
+  cursor: pointer;
+
+  p {
+    display: none;
+    color: variables.$colorDarkGray;
+    width: 90%;
+  }
+
+  .open {
+    display: flex;
+  }
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 20px;
+    width: 90%;
+  }
+
+  button {
+    font-size: 25px;
+  }
+  .openButton {
+    font-size: 28px;
+    color: variables.$colorPurple;
+  }
+}
