@@ -1,4 +1,5 @@
 @use '../../styles/variables.scss' as variables;
+@use '../../styles/breakpoints.scss' as breakpoint;
 
 .hero {
   position: relative;
@@ -7,13 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  padding-top: 200px;
 }
 
 .background {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 
   img {
     position: absolute;
@@ -21,35 +24,86 @@
   }
 
   .bg1 {
-    width: 412px;
-    height: 412px;
+    width: 350px;
+    height: 350px;
     top: -140px;
     left: -80px;
     animation-delay: 0s;
+
+    @include breakpoint.xl {
+      width: 412px;
+      height: 412px;
+    }
+    @include breakpoint.sm {
+      width: 300px;
+      height: 300px;
+    }
+    @include breakpoint.xs {
+      width: 250px;
+      height: 250px;
+    }
   }
 
   .bg2 {
-    width: 570px;
-    height: 570px;
+    width: 370px;
+    height: 370px;
     top: -300px;
     right: 10%;
     animation-delay: 2s;
+
+    @include breakpoint.md {
+      right: -10%;
+    }
+
+    @include breakpoint.sm {
+      right: -15%;
+    }
+
+    @include breakpoint.xs {
+      right: -15%;
+    }
   }
 
   .bg3 {
-    width: 219px;
-    height: 232px;
-    bottom: 15%;
+    width: 150px;
+    height: 158px;
+    bottom: 10%;
     left: 5%;
     animation-delay: 1s;
+
+    @include breakpoint.xl {
+      width: 219px;
+      height: 232px;
+    }
+    @include breakpoint.sm {
+      display: none;
+    }
+    @include breakpoint.xs {
+      display: none;
+    }
   }
 
   .bg4 {
-    width: 555px;
-    height: 512px;
-    bottom: 15%;
-    right: -5%;
+    width: 455px;
+    height: 419px;
+    bottom: 3%;
+    right: -8%;
     animation-delay: 0s;
+    overflow: hidden;
+
+    @include breakpoint.xl {
+      width: 555px;
+      height: 512px;
+      right: -4%;
+    }
+    @include breakpoint.sm {
+      width: 355px;
+      height: 327px;
+      right: -20%;
+    }
+    @include breakpoint.xs {
+      display: none;
+    }
   }
 }
 
@@ -61,49 +115,63 @@
 
   h1 {
     position: absolute;
-    font-size: 60px;
+    font-size: 50px;
     top: 2%;
     left: 2%;
     width: 200px;
+
+    @include breakpoint.md {
+      font-size: 40px;
+    }
+
+    @include breakpoint.sm {
+      font-size: 40px;
+    }
+
+    @include breakpoint.xs {
+      display: none;
+    }
   }
 
   h3 {
     position: absolute;
-    font-size: 28px;
-    bottom: 35%;
-    right: 3%;
-    width: 300px;
+    font-size: 24px;
+    bottom: 30%;
+    right: 16px;
+    width: 250px;
+
+    @include breakpoint.xl {
+      font-size: 28px;
+      bottom: 35%;
+      right: 3%;
+      width: 300px;
+    }
+    @include breakpoint.sm {
+      display: none;
+    }
+    @include breakpoint.xs {
+      display: none;
+    }
   }
 }
 
 .content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
+  margin-top: -80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  color: variables.$colorWhite;
 
   .logo {
-    font-size: 2.5rem;
-    font-weight: bold;
+    width: 320px;
+    height: 240px;
   }
 
   .slogan {
-    font-size: 1.5rem;
-    margin: 20px 0;
-  }
-
-  .downloadButton {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-
-    &:hover {
-      background-color: #0056b3;
-    }
+    max-width: 250px;
+    text-align: center;
+    font-size: 30px;
   }
 }
 

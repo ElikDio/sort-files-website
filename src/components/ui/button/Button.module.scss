@@ -1,0 +1,18 @@
+@use '../../../styles/variables.scss' as variables;
+
+.button {
+  background-color: variables.$colorPurple;
+  color: variables.$colorWhite;
+  font-size: 30px;
+  min-width: 250px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: variables.$colorPurpleHover;
+  }
+}

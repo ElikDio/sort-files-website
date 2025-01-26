@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.scss';
+import { Button } from '../ui/button/Button';
 
 export const Hero: React.FC = () => {
   return (
@@ -31,9 +32,14 @@ export const Hero: React.FC = () => {
         />
       </div>
       <div className={styles.content}>
-        <div className={styles.logo}>Logo</div>
+        <div className={styles.logo}>
+          <img
+            src="/photos/logo.png"
+            alt="SortFiles"
+          />
+        </div>
         <h1 className={styles.slogan}>Сортируй. Организуй. Экономь время.</h1>
-        <button className={styles.downloadButton}>Скачать</button>
+        <Button>Скачать</Button>
       </div>
     </section>
   );
