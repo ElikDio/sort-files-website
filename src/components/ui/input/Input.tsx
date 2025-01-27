@@ -1,4 +1,3 @@
-// import Cross from '@/public/icons/cross.svg';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './Input.module.scss';
@@ -72,14 +71,14 @@ export const Input: React.FC<InputProps> = ({
                 type="button"
                 aria-label="Очистить поле"
               >
-                x{/* <Cross /> */}
+                x
               </button>
             )}
           </div>
         </div>
       )}
       {errorText && <span className={styles.errorText}>{errorText}</span>}
-      {errorText === undefined && successText && (
+      {(errorText === '' || errorText === undefined) && successText && (
         <span className={styles.successText}>{successText}</span>
       )}
     </div>
