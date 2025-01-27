@@ -12,6 +12,8 @@
   p {
     display: none;
     color: variables.$colorDarkGray;
+    font-size: 18px;
+    line-height: 22px;
     width: 90%;
   }
 
@@ -24,16 +26,18 @@
   display: flex;
   justify-content: space-between;
 
-  h1 {
+  h3 {
     font-size: 20px;
+    line-height: 22px;
     width: 90%;
   }
 
   button {
-    font-size: 25px;
+    font-size: 24px;
+    font-weight: bold;
   }
   .openButton {
-    font-size: 28px;
+    font-size: 26px;
     color: variables.$colorPurple;
   }
 }

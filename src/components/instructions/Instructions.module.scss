@@ -1,14 +1,44 @@
 @use '../../styles/variables.scss' as variables;
+@use '../../styles/breakpoints.scss' as breakpoint;
 
 .instructions {
-  margin-top: 100px;
+  margin-top: variables.$marginTopSections;
   display: flex;
   gap: 132px;
   color: variables.$colorWhite;
 
+  @include breakpoint.md {
+    gap: 100px;
+  }
+
+  @include breakpoint.sm {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  @include breakpoint.xs {
+    flex-direction: column;
+    gap: 40px;
+  }
+
   h1 {
-    flex: 0 1 500px;
+    width: 500px;
     font-size: 60px;
+
+    @include breakpoint.md {
+      width: 400px;
+      font-size: 50px;
+    }
+
+    @include breakpoint.sm {
+      font-size: 45px;
+      width: 100%;
+    }
+    
+    @include breakpoint.xs {
+      font-size: 40px;
+      width: 100%;
+    }
   }
 }
 
@@ -26,6 +56,12 @@
   }
 
   p {
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 26px;
+
+    @include breakpoint.md {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 }

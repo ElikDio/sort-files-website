@@ -14,9 +14,9 @@
     margin-top: 4px;
     cursor: pointer;
     &:checked {
-      //   background: variables.$colorPurple url('/icons/checkmark-white.svg')
-      //     center center no-repeat;
-      background-color: variables.$colorPurple;
+        background: variables.$colorPurple url('../../../styles/icons/checkmark-white.svg')
+          center center no-repeat;
+      // background-color: variables.$colorPurple;
       border: 1px solid variables.$colorPurple;
     }
     &:hover {
@@ -27,5 +27,12 @@
     color: variables.$colorBlack;
     font-size: 16px;
     line-height: 20px;
+  }
+
+  a {
+    color: variables.$colorPurple;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

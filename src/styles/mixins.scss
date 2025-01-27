@@ -1,0 +1,19 @@
+@mixin container-padding ($padding-top: 0, $padding-bottom: 0) {
+  padding: $padding-top 60px $padding-bottom 60px;
+
+  @media (min-width: 1920px) {
+    padding: $padding-top 120px $padding-bottom 120px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: $padding-top 40px $padding-bottom 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: $padding-top 30px $padding-bottom 30px;
+  }
+
+  @media (max-width: 420px) {
+    padding: $padding-top 16px $padding-bottom 16px;
+  }
+}

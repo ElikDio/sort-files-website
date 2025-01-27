@@ -1,20 +1,22 @@
 import React from 'react';
+import { ReactComponent as GitHub } from '../../styles/icons/github.svg';
+import { ReactComponent as Telegram } from '../../styles/icons/tg.svg';
 import { Button } from '../ui/button/Button';
 import styles from './Footer.module.scss';
 
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footer_header}>
+      <div className={styles.footerHeader}>
         <div className={styles.logo}>
           <h1>SortFiles</h1>
           <div className={styles.sublogo}>ПО для сортировки файлов</div>
           <Button>Скачать</Button>
         </div>
 
-        <div className={styles.footer_columns}>
-          <div className={styles.footer_column}>
-            <div className={styles.footer_title}>SortFiles</div>
+        <div className={styles.footerNavigation}>
+          <div className={styles.footerNav}>
+            <div className={styles.title}>SortFiles</div>
             <ul>
               <li>
                 <a href="#hero">Главная</a>
@@ -36,33 +38,48 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.footer_info}>
-        <div className={styles.upper_info}>
+      <div className={styles.footerInfo}>
+        <div className={styles.footerLinks}>
           <div className={styles.copyright}>
-            Made by: <a href="#elikdio.ru">ElikDio</a>
+            Made by:{' '}
+            <a
+              href="https://elikdio.ru"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ElikDio
+            </a>
           </div>
           <div className={styles.socials}>
             <a
-              href="#vk"
+              href="https://t.me/elik_id"
+              target="_blank"
               className={styles.social}
+              rel="noreferrer"
             >
-              {/* <Vk/> */}
+              <Telegram />
             </a>
             <a
-              href="#tg"
+              href="https://github.com/ElikDio"
+              target="_blank"
+              rel="noreferrer"
               className={styles.social}
             >
-              {/* <TG/> */}
+              <GitHub />
             </a>
           </div>
         </div>
 
-        <div className={styles.lower_info}>
-          <div className={styles.copy}>
-            © 2025 Все права защищены
-          </div>
+        <div className={styles.footerLaws}>
+          <div className={styles.copy}>© 2025 Все права защищены</div>
           <div className={styles.links}>
-            <a href="#agreement">Пользовательское соглашение</a>
+            <a
+              href="https://sort-files.ru/agreement.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Пользовательское соглашение
+            </a>
           </div>
         </div>
       </div>

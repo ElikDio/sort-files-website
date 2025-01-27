@@ -30,19 +30,22 @@ export const FeedbackForm: React.FC = () => {
           <Input placeholder="Ваше имя" />
           <Input
             type="email"
-            errorText='Некорректный email'
             placeholder="Ваш e-mail для ответа"
           />
           <Input
             required={true}
-            // errorText='Обязательное поле'
-            successText='Получили ваш ответ!'
             placeholder="Ваше сообщение"
             type="textarea"
           />
           <CheckBox name={'consent'}>
-            Даю согласие на обработку моих персональных данных в соответствии с
-            <a href="#polytics">политикой конфиденциальности</a>
+            Даю согласие на обработку моих персональных данных в соответствии с{' '}
+            <a
+              href="https://sort-files.ru/confidential.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              политикой конфиденциальности
+            </a>
           </CheckBox>
         </div>
         <Button>Отправьте нам сообщение</Button>

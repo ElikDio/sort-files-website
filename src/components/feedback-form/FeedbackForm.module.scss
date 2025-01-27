@@ -1,11 +1,12 @@
 @use '../../styles/variables.scss' as variables;
+@use '../../styles/breakpoints.scss' as breakpoint;
 
 .feedbackForm {
   display: flex;
   position: relative;
   justify-content: space-between;
   padding: 40px;
-  margin-top: 160px;
+  margin-top: variables.$marginTopSections;
   border-radius: 20px;
   gap: 40px;
   background-color: #00000050;
@@ -22,6 +23,18 @@
     z-index: -1;
     object-position: 10% 75%;
   }
+
+  @include breakpoint.sm {
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
+  @include breakpoint.xs {
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+  }
 }
 
 .feebackInfo {
@@ -35,11 +48,31 @@
     font-size: 65px;
     max-width: 500px;
     margin-bottom: 120px;
+
+    @include breakpoint.sm {
+      margin-bottom: 40px;
+    }
+
+    @include breakpoint.xs {
+      margin-bottom: 40px;
+    }
   }
 
   p {
     font-size: 30px;
     max-width: 470px;
+
+    @include breakpoint.md {
+      display: none;
+    }
+
+    @include breakpoint.sm {
+      display: none;
+    }
+
+    @include breakpoint.xs {
+      display: none;
+    }
   }
 }
 
@@ -57,5 +90,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  @include breakpoint.sm {
+    padding: 16px 10px;
+  }
+  
+  @include breakpoint.xs {
+    padding: 16px 10px;
   }
 }

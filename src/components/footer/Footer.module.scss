@@ -1,145 +1,154 @@
 @use '../../styles/variables.scss' as variables;
+@use '../../styles/mixins.scss' as mixins;
 
 .footer {
   height: 420px;
-  padding-top: 60px;
-  margin-top: 120px;
+  margin-top: variables.$marginTopSections;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: variables.$colorBlackAccent;
 
-  padding: 60px 40px 0 40px;
-
-  @media (min-width: 1920px) {
-    padding: 60px 120px 0 120px;
-  }
-
-  @media (max-width: 420px) {
-    padding: 40px 16px 0 16px;
-  }
+  @include mixins.container-padding(40px);
 
   @media (max-width: 924px) {
     height: auto;
     gap: 50px;
     padding-bottom: 20px;
   }
+}
 
-  &_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
+.footerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: variables.$colorWhite;
+
+  h1 {
+    font-size: 40px;
   }
 
-  .logo {
+  .sublogo {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 12px 0 32px 0;
+  }
+}
+
+.footerNavigation {
+  display: flex;
+  gap: 120px;
+
+  @media (max-width: 928px) {
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .footerNav {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    color: variables.$colorWhite;
-
-    h1 {
-      font-size: 40px;
-    }
-
-    .sublogo {
-      font-size: 20px;
-      line-height: 24px;
-      margin: 12px 0 32px 0;
-    }
+    gap: 12px;
   }
 
-  &_columns {
+  .title {
+    font-size: 16px;
+    line-height: 20px;
+    color: variables.$colorWhite;
+  }
+
+  ul {
     display: flex;
-    gap: 120px;
+    flex-direction: column;
+    gap: 12px;
 
-    @media (max-width: 928px) {
-      gap: 40px;
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-
-    .footer_column {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer_title {
+    li {
       font-size: 16px;
       line-height: 20px;
-      color: variables.$colorWhite;
-    }
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-
-      li {
-        font-size: 16px;
-        line-height: 20px;
-        color: variables.$colorGray;
-        transition: all 0.2s;
-
-        @media (any-hover: hover) {
-          &:hover {
-            color: variables.$colorWhite;
-          }
-        }
-      }
-    }
-  }
-
-  .upper_info {
-    padding-bottom: 20px;
-    border-bottom: 1px solid variables.$colorGray;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    @media (max-width: 624px) {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-      gap: 24px;
-      padding-top: 28px;
-      border-top: 1px solid variables.$colorGray;
-    }
-
-    .copyright {
-      font-size: 14px;
-      line-height: 16px;
       color: variables.$colorGray;
+      transition: all 0.2s;
 
-      a {
-        transition: all 0.2s;
-
-        @media (any-hover: hover) {
-          &:hover {
-            color: variables.$colorWhite;
-          }
+      @media (any-hover: hover) {
+        &:hover {
+          color: variables.$colorWhite;
         }
       }
     }
+  }
+}
 
-    .socials {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+.footerLinks {
+  padding-bottom: 20px;
+  border-bottom: 1px solid variables.$colorGray;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @media (max-width: 624px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 28px;
+    border-top: 1px solid variables.$colorGray;
+  }
+
+  .copyright {
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$colorGray;
+
+    a {
+      transition: all 0.2s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: variables.$colorWhite;
+        }
+      }
     }
   }
 
-  .lower_info {
-    padding: 20px 0;
+  .socials {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
+  }
+}
+
+.footerLaws {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 624px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .copy {
+    line-height: 16px;
+    color: variables.$colorGray;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
     @media (max-width: 624px) {
       flex-direction: column-reverse;
@@ -147,32 +156,15 @@
       gap: 16px;
     }
 
-    .copy {
+    a {
+      font-size: 14px;
       line-height: 16px;
       color: variables.$colorGray;
-    }
+      transition: all 0.2s;
 
-    .links {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      @media (max-width: 624px) {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      a {
-        font-size: 14px;
-        line-height: 16px;
-        color: variables.$colorGray;
-        transition: all 0.2s;
-
-        @media (any-hover: hover) {
-          &:hover {
-            color: variables.$colorWhite;
-          }
+      @media (any-hover: hover) {
+        &:hover {
+          color: variables.$colorWhite;
         }
       }
     }
