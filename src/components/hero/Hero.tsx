@@ -1,10 +1,13 @@
 import React from 'react';
+import { DownloadButton } from '../ui/download-button/DownloadButton';
 import styles from './Hero.module.scss';
-import { Button } from '../ui/button/Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className={styles.hero} id="hero">
+    <section
+      className={styles.hero}
+      id="hero"
+    >
       <div className={styles.texts}>
         <h1>Sort Files</h1>
         <h3>Приложение, которое организует ваши файлы за несколько кликов.</h3>
@@ -39,7 +42,13 @@ export const Hero: React.FC = () => {
           />
         </div>
         <h1 className={styles.slogan}>Сортируй. Организуй. Экономь время.</h1>
-        <Button>Скачать</Button>
+        <a
+          href="#about"
+          className={styles.mobileButton}
+        >
+          Узнать больше
+        </a>
+        <DownloadButton />
       </div>
     </section>
   );

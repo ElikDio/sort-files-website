@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
 
           <div className={styles.buttons}>
             <a
-              href="https://github.com/ElikDio"
+              href="https://github.com/ElikDio/sort-files"
               target="_blank"
               rel="noreferrer"
             >

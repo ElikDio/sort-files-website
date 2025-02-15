@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as GitHub } from '../../styles/icons/github.svg';
 import { ReactComponent as Telegram } from '../../styles/icons/tg.svg';
-import { Button } from '../ui/button/Button';
+import { DownloadButton } from '../ui/download-button/DownloadButton';
 import styles from './Footer.module.scss';
 
 export const Footer: React.FC = () => {
@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         <div className={styles.logo}>
           <h1>SortFiles</h1>
           <div className={styles.sublogo}>ПО для сортировки файлов</div>
-          <Button>Скачать</Button>
+          <DownloadButton />
         </div>
 
         <div className={styles.footerNavigation}>
@@ -52,15 +52,15 @@ export const Footer: React.FC = () => {
           </div>
           <div className={styles.socials}>
             <a
-              href="https://t.me/elik_id"
+              href="https://t.me/SortFilesSupport_bot"
               target="_blank"
-              className={styles.social}
               rel="noreferrer"
+              className={styles.social}
             >
               <Telegram />
             </a>
             <a
-              href="https://github.com/ElikDio"
+              href="https://github.com/ElikDio/sort-files"
               target="_blank"
               rel="noreferrer"
               className={styles.social}

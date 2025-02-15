@@ -1,0 +1,29 @@
+@use '../../../styles/variables.scss' as variables;
+@use '../../../styles/breakpoints.scss' as breakpoint;
+
+.downloadButton {
+  background-color: variables.$colorPurple;
+  color: variables.$colorWhite;
+  text-align: center;
+  font-size: 25px;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: variables.$colorPurpleHover;
+  }
+
+  @include breakpoint.sm {
+    display: none;
+  }
+
+  @include breakpoint.xs {
+    display: none;
+  }
+}

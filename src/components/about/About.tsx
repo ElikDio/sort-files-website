@@ -1,11 +1,27 @@
-import React from 'react';
+import clsx from 'clsx';
+import React, { useRef, useState } from 'react';
 import { ReactComponent as Python } from '../../styles/icons/python.svg';
 import { ReactComponent as Qt } from '../../styles/icons/qt.svg';
 import { ReactComponent as Windows } from '../../styles/icons/windows.svg';
-import { Button } from '../ui/button/Button';
+import { DownloadButton } from '../ui/download-button/DownloadButton';
 import styles from './About.module.scss';
 
 export const About: React.FC = () => {
+  const [showDemo, setShowDemo] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleDemo = () => {
+    if (showDemo) {
+      videoRef.current?.pause();
+      if (videoRef.current?.currentTime) {
+        videoRef.current.currentTime = 0;
+      }
+    } else {
+      videoRef.current?.play();
+    }
+    setShowDemo(!showDemo);
+  };
+
   return (
     <section
       className={styles.about}
@@ -19,7 +35,7 @@ export const About: React.FC = () => {
               <b>Sort Files</b> был создан с одной целью — сделать сортировку
               ваших файлов по дате создания лёгкой и доступной
             </p>
-            <Button>Скачать</Button>
+            <DownloadButton />
           </div>
           <div className={styles.stack}>
             <p>
@@ -35,11 +51,41 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles.demo}>
+      <div
+        className={clsx(styles.demo, { [styles.show]: !showDemo })}
+        onClick={toggleDemo}
+      >
         <img
           src="/photos/demo.png"
           alt="demo"
         />
+      </div>
+
+      <div
+        className={clsx(
+          styles.demoHuge,
+          { [styles.showHuge]: showDemo },
+          styles.backdrop
+        )}
+        onClick={toggleDemo}
+      >
+        <div className={styles.demoVideo}>
+          <video
+            className={styles.video}
+            src={'/demo.mp4'}
+            loop
+            muted
+            controls={false}
+            playsInline
+            ref={videoRef}
+          >
+            Your browser does not support the video tag.
+          </video>
+          <img
+            src="/photos/demo.png"
+            alt="demo"
+          />
+        </div>
       </div>
     </section>
   );

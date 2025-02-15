@@ -29,25 +29,25 @@
   max-width: 650px;
   font-size: 30px;
   line-height: 34px;
-  
+
   @include breakpoint.lg {
     max-width: 500px;
     font-size: 24px;
     line-height: 28px;
   }
-  
+
   @include breakpoint.md {
     max-width: 350px;
     font-size: 22px;
     line-height: 26px;
   }
-  
+
   @include breakpoint.sm {
     max-width: 100%;
     font-size: 20px;
     line-height: 24px;
   }
-  
+
   @include breakpoint.xs {
     font-size: 24px;
     line-height: 28px;
@@ -60,7 +60,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    gap: 60px
+    gap: 60px;
   }
 
   @include breakpoint.xs {
@@ -93,10 +93,11 @@
 }
 
 .demo {
+  display: none;
   width: 800px;
   margin-top: 50px;
   cursor: pointer;
-  
+
   @include breakpoint.lg {
     width: 700px;
   }
@@ -111,10 +112,11 @@
   }
 
   @include breakpoint.xs {
+    display: flex;
     width: 100%;
     margin-top: 30px;
   }
-  
+
   img {
     transition: all 0.2s ease;
   }
@@ -123,5 +125,83 @@
     img {
       transform: scale(1.04);
     }
+  }
+}
+
+.demoHuge {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  margin: auto;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.backdrop {
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.demoVideo {
+  position: absolute;
+  top: 40px;
+  right: 200px;
+  width: 1000px;
+
+  @include breakpoint.lg {
+    width: 800px;
+    right: 100px;
+  }
+
+  @include breakpoint.md {
+    width: 800px;
+    right: 60px;
+  }
+
+  @include breakpoint.sm {
+    width: 550px;
+    top: 150px;
+    right: 20px;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.showHuge {
+  opacity: 1;
+  visibility: visible;
+
+  @include breakpoint.xs {
+    display: none;
+  }
+}
+
+.video {
+  top: 20px;
+  right: 125px;
+  position: absolute;
+  width: 750px;
+
+  @include breakpoint.lg {
+    width: 603px;
+    right: 100px;
+  }
+
+  @include breakpoint.md {
+    width: 603px;
+    right: 100px;
+  }
+
+  @include breakpoint.sm {
+    top: 15px;
+    width: 414px;
+    right: 68px;
   }
 }
