@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# [sort-files.ru](https://sort-files.ru/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18.2-61dbfb)
+![Scss/Sasst](https://img.shields.io/badge/SCSS/Sass-1.83-cd6799)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178c6)
 
-## Available Scripts
+Веб-сайт **Sort Files** предоставляет возможность скачать одноименное ПО для сортировки файлов по дате их создания, а также узнать о нём больше или задать вопрос создателям приложения
 
-In the project directory, you can run:
+<a href="https://github.com/ElikDio/sort-files" target="_blank">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="20" height="20">
+  Репозиторий приложения
+</a>
 
-### `npm start`
+## Технологии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Веб-сайт реализован с использованием следующих технологий:
+- ```React``` — Библиотека JavaScript для создания UI
+- ```Sass``` — Препроцессор CSS стилей
+- ```clsx``` — Утилита для условного составления классов CSS в React-компонентах
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Package manager
 
-### `npm test`
+ Для сборки используется пакетный менджер ```pnpm```:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Установка зависимостей**
+```node
+pnpm install
+```
+**Запуск в dev режиме**
+```node
+pnpm start
+```
